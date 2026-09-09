@@ -3,9 +3,23 @@ import { applications } from '../data/applications'
 
 function Dashboard() {
   const totalApplications = applications.length
-  const interviews = 0
-  const offers = 0
-  const applicationsThisMonth = 0
+  const interviews = applications.filter(function (application) {
+    return application.status === 'Interview'
+  }).length
+
+  const offers = applications.filter(function (application) {
+    return application.status === 'Offer'
+  }).length
+
+  const currentDate = new Date()
+  const currentMonth = currentDate.getMonth() + 1
+  const currentYear = currentDate.getFullYear()
+
+  const applicationsThisMonth = applications.filter(function (application) {
+    const [year, month] = application.dateApplied.split('-').map(Number)
+
+    return year === currentYear && month === currentMonth
+  }).length
 
   return (
     <section className="dashboard">

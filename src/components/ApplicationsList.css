@@ -1,0 +1,29 @@
+.applications-list {
+  margin-top: 40px;
+}
+
+.applications-list h2 {
+  margin-bottom: 20px;
+}
+
+.applications-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.application-card {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.application-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.application-card p {
+  margin: 6px 0;
+}
