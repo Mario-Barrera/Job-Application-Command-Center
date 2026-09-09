@@ -1,9 +1,11 @@
 import './Dashboard.css'
+import { applications } from '../data/applications'
 
 function Dashboard() {
-  const totalApplications = 0
+  const totalApplications = applications.length
   const interviews = 0
   const offers = 0
+  const applicationsThisMonth = 0
 
   return (
     <section className="dashboard">
@@ -24,6 +26,11 @@ function Dashboard() {
         <article className="summary-card">
           <h3>Offers</h3>
           <p className="summary-number">{offers}</p>
+        </article>
+
+        <article className="summary-card">
+          <h3>Applications This Month</h3>
+          <p className="summary-number">{applicationsThisMonth}</p>
         </article>
       </div>
     </section>
