@@ -27,3 +27,30 @@
 .application-card p {
   margin: 6px 0;
 }
+
+.status-filter,
+.sort-filter {
+  margin: 12px 0 20px 20px;
+  padding: 5px;
+  min-width: 180px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.status-filter:focus,
+.sort-filter:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.no-results {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  text-align: center;
+}
