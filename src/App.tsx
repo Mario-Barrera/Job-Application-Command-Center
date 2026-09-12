@@ -2,6 +2,7 @@ import './App.css'
 import Header from './components/Header'
 import Dashboard from './components/Dashboard'
 import ApplicationsList from './components/ApplicationsList'
+import AddApplicationForm from './components/AddApplicationForm'
 
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
       <main>
         {/* Render the Dashboard component here. */}
         <Dashboard />
+
+        {/* Render the Add Application form. */}
+        <AddApplicationForm />
 
         {/* Render the Applications List component here. */}
         <ApplicationsList />
