@@ -2,7 +2,11 @@ import { useState } from 'react'
 import { applications } from '../data/applications'
 import './ApplicationsList.css'
 
-function ApplicationsList() {
+type ApplicationsListProps = {
+  applications: typeof applications
+}
+
+function ApplicationsList({ applications }: ApplicationsListProps) {
   const [searchTerm, setSearchTerm] = useState('')
   const [statusFilter, setStatusFilter] = useState('All')
   const [sortOption, setSortOption] = useState('newest')
@@ -88,6 +92,10 @@ function ApplicationsList() {
             return (
               <article className="application-card" key={application.id}>
                 <h3>{application.company}</h3>
+
+                <p>
+                  <strong>ID:</strong> {application.id}
+                </p>
 
                 <p>
                   <strong>Position:</strong> {application.position}

@@ -2,7 +2,7 @@ import type { Application } from '../types/Application'
 
 export const applications: Application[] = [
   {
-    id: 1,
+    id: 3,
     company: 'Example Company',
     position: 'Junior Frontend Developer',
     status: 'Applied',
@@ -16,7 +16,7 @@ export const applications: Application[] = [
     dateApplied: '2026-09-05',
   },
   {
-    id: 3,
+    id: 1,
     company: 'Code Works',
     position: 'Junior Full Stack Developer',
     status: 'Offer',

@@ -1,11 +1,39 @@
 import { useState } from 'react'
 import './AddApplicationForm.css'
+import type { Application } from '../types/Application'
 
-function AddApplicationForm() {
+// Omit<Application, 'id'> uses the Application type, but does not require the id property.
+type AddApplicationFormProps = {
+  addApplication(newApplication: Omit<Application, 'id'>): void
+}
+
+function AddApplicationForm({ addApplication }: AddApplicationFormProps) {
   const [company, setCompany] = useState('')
   const [position, setPosition] = useState('')
   const [status, setStatus] = useState('Applied')
   const [dateApplied, setDateApplied] = useState('')
+
+  // event: React.SubmitEvent<HTMLFormElement> is a TypeScript type annotation for a form submit event
+  function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const newApplication = {
+      company,
+      position,
+      dateApplied,
+      status,
+    };
+
+    console.log(newApplication)
+
+    addApplication(newApplication)
+
+    // Clear the form after adding the application
+    setCompany('')
+    setPosition('')
+    setDateApplied('')
+    setStatus('Applied')
+  }
   
   return (
     <section className="add-application">
@@ -13,9 +41,7 @@ function AddApplicationForm() {
 
       <form
         className="application-form"
-        onSubmit={function (event) {
-          event.preventDefault()
-        }}
+        onSubmit={handleSubmit}
       >
         <div className="form-group">
           <label htmlFor="company">Company</label>
